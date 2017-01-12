@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04BB5ED11E2798E200F42BB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5ED01E2798E200F42BB4 /* AppDelegate.swift */; };
+		04BB5ED31E2798E200F42BB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5ED21E2798E200F42BB4 /* ViewController.swift */; };
+		04BB5ED61E2798E200F42BB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BB5ED41E2798E200F42BB4 /* Main.storyboard */; };
+		04BB5ED81E2798E200F42BB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04BB5ED71E2798E200F42BB4 /* Assets.xcassets */; };
+		04BB5EDB1E2798E200F42BB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BB5ED91E2798E200F42BB4 /* LaunchScreen.storyboard */; };
+		04BB5EE61E2798E200F42BB4 /* simpleCRMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5EE51E2798E200F42BB4 /* simpleCRMTests.swift */; };
+		04BB5EF11E2798E200F42BB4 /* simpleCRMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5EF01E2798E200F42BB4 /* simpleCRMUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04BB5EE21E2798E200F42BB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04BB5EC51E2798E200F42BB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04BB5ECC1E2798E200F42BB4;
+			remoteInfo = simpleCRM;
+		};
+		04BB5EED1E2798E200F42BB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04BB5EC51E2798E200F42BB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04BB5ECC1E2798E200F42BB4;
+			remoteInfo = simpleCRM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04BB5ECD1E2798E200F42BB4 /* simpleCRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleCRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04BB5ED01E2798E200F42BB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04BB5ED21E2798E200F42BB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04BB5ED51E2798E200F42BB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04BB5ED71E2798E200F42BB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04BB5EDA1E2798E200F42BB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04BB5EDC1E2798E200F42BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04BB5EE11E2798E200F42BB4 /* simpleCRMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simpleCRMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04BB5EE51E2798E200F42BB4 /* simpleCRMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simpleCRMTests.swift; sourceTree = "<group>"; };
+		04BB5EE71E2798E200F42BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04BB5EEC1E2798E200F42BB4 /* simpleCRMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simpleCRMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04BB5EF01E2798E200F42BB4 /* simpleCRMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simpleCRMUITests.swift; sourceTree = "<group>"; };
+		04BB5EF21E2798E200F42BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04BB5ECA1E2798E200F42BB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB5EDE1E2798E200F42BB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB5EE91E2798E200F42BB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04BB5EC41E2798E200F42BB4 = {
+			isa = PBXGroup;
+			children = (
+				04BB5ECF1E2798E200F42BB4 /* simpleCRM */,
+				04BB5EE41E2798E200F42BB4 /* simpleCRMTests */,
+				04BB5EEF1E2798E200F42BB4 /* simpleCRMUITests */,
+				04BB5ECE1E2798E200F42BB4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04BB5ECE1E2798E200F42BB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04BB5ECD1E2798E200F42BB4 /* simpleCRM.app */,
+				04BB5EE11E2798E200F42BB4 /* simpleCRMTests.xctest */,
+				04BB5EEC1E2798E200F42BB4 /* simpleCRMUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04BB5ECF1E2798E200F42BB4 /* simpleCRM */ = {
+			isa = PBXGroup;
+			children = (
+				04BB5ED01E2798E200F42BB4 /* AppDelegate.swift */,
+				04BB5ED21E2798E200F42BB4 /* ViewController.swift */,
+				04BB5ED41E2798E200F42BB4 /* Main.storyboard */,
+				04BB5ED71E2798E200F42BB4 /* Assets.xcassets */,
+				04BB5ED91E2798E200F42BB4 /* LaunchScreen.storyboard */,
+				04BB5EDC1E2798E200F42BB4 /* Info.plist */,
+			);
+			path = simpleCRM;
+			sourceTree = "<group>";
+		};
+		04BB5EE41E2798E200F42BB4 /* simpleCRMTests */ = {
+			isa = PBXGroup;
+			children = (
+				04BB5EE51E2798E200F42BB4 /* simpleCRMTests.swift */,
+				04BB5EE71E2798E200F42BB4 /* Info.plist */,
+			);
+			path = simpleCRMTests;
+			sourceTree = "<group>";
+		};
+		04BB5EEF1E2798E200F42BB4 /* simpleCRMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04BB5EF01E2798E200F42BB4 /* simpleCRMUITests.swift */,
+				04BB5EF21E2798E200F42BB4 /* Info.plist */,
+			);
+			path = simpleCRMUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04BB5ECC1E2798E200F42BB4 /* simpleCRM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04BB5EF51E2798E200F42BB4 /* Build configuration list for PBXNativeTarget "simpleCRM" */;
+			buildPhases = (
+				04BB5EC91E2798E200F42BB4 /* Sources */,
+				04BB5ECA1E2798E200F42BB4 /* Frameworks */,
+				04BB5ECB1E2798E200F42BB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = simpleCRM;
+			productName = simpleCRM;
+			productReference = 04BB5ECD1E2798E200F42BB4 /* simpleCRM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04BB5EE01E2798E200F42BB4 /* simpleCRMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04BB5EF81E2798E200F42BB4 /* Build configuration list for PBXNativeTarget "simpleCRMTests" */;
+			buildPhases = (
+				04BB5EDD1E2798E200F42BB4 /* Sources */,
+				04BB5EDE1E2798E200F42BB4 /* Frameworks */,
+				04BB5EDF1E2798E200F42BB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04BB5EE31E2798E200F42BB4 /* PBXTargetDependency */,
+			);
+			name = simpleCRMTests;
+			productName = simpleCRMTests;
+			productReference = 04BB5EE11E2798E200F42BB4 /* simpleCRMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04BB5EEB1E2798E200F42BB4 /* simpleCRMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04BB5EFB1E2798E200F42BB4 /* Build configuration list for PBXNativeTarget "simpleCRMUITests" */;
+			buildPhases = (
+				04BB5EE81E2798E200F42BB4 /* Sources */,
+				04BB5EE91E2798E200F42BB4 /* Frameworks */,
+				04BB5EEA1E2798E200F42BB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04BB5EEE1E2798E200F42BB4 /* PBXTargetDependency */,
+			);
+			name = simpleCRMUITests;
+			productName = simpleCRMUITests;
+			productReference = 04BB5EEC1E2798E200F42BB4 /* simpleCRMUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04BB5EC51E2798E200F42BB4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "ke zhang";
+				TargetAttributes = {
+					04BB5ECC1E2798E200F42BB4 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = ME5B48L8EA;
+						ProvisioningStyle = Automatic;
+					};
+					04BB5EE01E2798E200F42BB4 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = ME5B48L8EA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 04BB5ECC1E2798E200F42BB4;
+					};
+					04BB5EEB1E2798E200F42BB4 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = ME5B48L8EA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 04BB5ECC1E2798E200F42BB4;
+					};
+				};
+			};
+			buildConfigurationList = 04BB5EC81E2798E200F42BB4 /* Build configuration list for PBXProject "simpleCRM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04BB5EC41E2798E200F42BB4;
+			productRefGroup = 04BB5ECE1E2798E200F42BB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04BB5ECC1E2798E200F42BB4 /* simpleCRM */,
+				04BB5EE01E2798E200F42BB4 /* simpleCRMTests */,
+				04BB5EEB1E2798E200F42BB4 /* simpleCRMUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04BB5ECB1E2798E200F42BB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BB5EDB1E2798E200F42BB4 /* LaunchScreen.storyboard in Resources */,
+				04BB5ED81E2798E200F42BB4 /* Assets.xcassets in Resources */,
+				04BB5ED61E2798E200F42BB4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB5EDF1E2798E200F42BB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB5EEA1E2798E200F42BB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04BB5EC91E2798E200F42BB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BB5ED31E2798E200F42BB4 /* ViewController.swift in Sources */,
+				04BB5ED11E2798E200F42BB4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB5EDD1E2798E200F42BB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BB5EE61E2798E200F42BB4 /* simpleCRMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB5EE81E2798E200F42BB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BB5EF11E2798E200F42BB4 /* simpleCRMUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04BB5EE31E2798E200F42BB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04BB5ECC1E2798E200F42BB4 /* simpleCRM */;
+			targetProxy = 04BB5EE21E2798E200F42BB4 /* PBXContainerItemProxy */;
+		};
+		04BB5EEE1E2798E200F42BB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04BB5ECC1E2798E200F42BB4 /* simpleCRM */;
+			targetProxy = 04BB5EED1E2798E200F42BB4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04BB5ED41E2798E200F42BB4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04BB5ED51E2798E200F42BB4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04BB5ED91E2798E200F42BB4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04BB5EDA1E2798E200F42BB4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04BB5EF31E2798E200F42BB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04BB5EF41E2798E200F42BB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04BB5EF61E2798E200F42BB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ME5B48L8EA;
+				INFOPLIST_FILE = simpleCRM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kezhang.simpleCRM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		04BB5EF71E2798E200F42BB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ME5B48L8EA;
+				INFOPLIST_FILE = simpleCRM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kezhang.simpleCRM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		04BB5EF91E2798E200F42BB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ME5B48L8EA;
+				INFOPLIST_FILE = simpleCRMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kezhang.simpleCRMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/simpleCRM.app/simpleCRM";
+			};
+			name = Debug;
+		};
+		04BB5EFA1E2798E200F42BB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ME5B48L8EA;
+				INFOPLIST_FILE = simpleCRMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kezhang.simpleCRMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/simpleCRM.app/simpleCRM";
+			};
+			name = Release;
+		};
+		04BB5EFC1E2798E200F42BB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = ME5B48L8EA;
+				INFOPLIST_FILE = simpleCRMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kezhang.simpleCRMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = simpleCRM;
+			};
+			name = Debug;
+		};
+		04BB5EFD1E2798E200F42BB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = ME5B48L8EA;
+				INFOPLIST_FILE = simpleCRMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kezhang.simpleCRMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = simpleCRM;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04BB5EC81E2798E200F42BB4 /* Build configuration list for PBXProject "simpleCRM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BB5EF31E2798E200F42BB4 /* Debug */,
+				04BB5EF41E2798E200F42BB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04BB5EF51E2798E200F42BB4 /* Build configuration list for PBXNativeTarget "simpleCRM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BB5EF61E2798E200F42BB4 /* Debug */,
+				04BB5EF71E2798E200F42BB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		04BB5EF81E2798E200F42BB4 /* Build configuration list for PBXNativeTarget "simpleCRMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BB5EF91E2798E200F42BB4 /* Debug */,
+				04BB5EFA1E2798E200F42BB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		04BB5EFB1E2798E200F42BB4 /* Build configuration list for PBXNativeTarget "simpleCRMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BB5EFC1E2798E200F42BB4 /* Debug */,
+				04BB5EFD1E2798E200F42BB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04BB5EC51E2798E200F42BB4 /* Project object */;
+}
