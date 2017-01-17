@@ -7,12 +7,39 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
+    
+    //let sugeID = "login"
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        FIRAuth.auth()!.addStateDidChangeListener(){
+            
+            auth,user in
+            
+            if user != nil {
+                
+                
+                
+                self.performSegue(withIdentifier: "mylogin", sender: nil)
+                
+                print("log in!")
+                
+            }
+            else{
+                print("Not log in!")
+            }
+            
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +47,45 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func DidLogTouched(_ sender: Any) {
+        var u = username.text!
+        var p = password.text!
+        FIRAuth.auth()!.signIn(withEmail: username.text!, password: password.text!)
+        
+        /*FIRAuth.auth()?.signIn(withEmail: username.text!, password: password.text!) { (user, error) in
+            
+            if error != nil {
+                print(error!.localizedDescription)
+                print("Not log in!")
+            }
+            else{
+                
+                self.performSegue(withIdentifier: "mylogin", sender: nil)
+                
+                
+                print("log in!")
+                
+            }
+            
+        }*/
+        print(u)
+        print(p)
 
+    }
+//FIRAuth.auth()!.signIn(withEmail: username.text!, password: password.text!)
 }
+
+/*extension ViewController : UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == username{
+            password.becomeFirstResponder()
+        }
+        
+        if textField == password{
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+}*/
 

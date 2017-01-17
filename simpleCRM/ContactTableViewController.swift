@@ -7,11 +7,280 @@
 //
 
 import UIKit
+import Firebase
 
-class ContactTableViewController: UITableViewController {
+struct nameobject {
+    var name:String!
+    
+    init(name:String) {
+        self.name = name
+    }
+}
+
+struct object{
+    var name: String!
+    var uid:String!
+}
+
+struct contactInfo{
+    var address:String!
+    var email:String!
+    var phone:String!
+    var other:String!
+    var key:String!
+}
+
+/*struct tempname{
+    var name:String!
+    var downloaded:Bool!
+    
+    init(name:String,dowloaded:Bool = false){
+        self.name = name
+        self.downloaded = dowloaded
+    }
+}*/
+
+var pretitle = ""
+//var array = ["irue","maife jfieow"]
+
+class ContactTableViewController: UITableViewController,UITextFieldDelegate{
+    
+    @IBOutlet weak var AddContactBT: UIBarButtonItem!
+    
+    let myref = FIRDatabase.database().reference().child("users")
+    
+    var users = FIRAuth.auth()?.currentUser
+    
+    //var tempInfo : Dictionary<String,contactInfo>? = Dictionary()
+    
+    var redraw = true
+    
+    //var array = [String]()
+    //var array : Dictionary<String,String>? = Dictionary()
+    
+    var complete = false
+ 
+    let wordIndexTitles = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    
+    //var content : Dictionary<String,[String]>? = Dictionary()
+    var content : Dictionary<String,[object]>? = Dictionary()
+    var array : Dictionary<String,String>? = Dictionary()
+    var tempInfo : Dictionary<String,contactInfo>? = Dictionary()
+    var key = ""
+    var contentkeys = [String]()
+    var add : Dictionary<String,String>? = Dictionary()
+    
+    func putcontent(){
+        
+        
+        array?.values.sorted(by: {$0 < $1})
+        
+        print(array)
+        
+        
+        
+        for each in wordIndexTitles{
+            content?[each] = []
+        }
+        
+        for each in wordIndexTitles{
+            
+        
+        for eachString in array! {
+            
+            let Fletter = "\(eachString.value[eachString.value.startIndex])"
+            
+   
+                
+                if Fletter.lowercased() == each{
+                    
+                    //content?[each]?.append(eachString)
+                    //content?[each]? = [object(name:eachString.value,uid:eachString.key)]
+                    content?[each]?.append(object(name:eachString.value,uid:eachString.key))
+                }
+    
+        }
+            
+        }
+        
+        contentkeys = [String]((content?.keys)!)
+        contentkeys.sort{$0 < $1 }
+        //print(content)
+        
+        
+    }
+    
+    
+    @IBAction func logoutClicked(_ sender: Any) {
+        
+        self.dismiss(animated:true,completion:nil)
+    }
+    
+    @IBAction func addClicked(_ sender: Any) {
+        
+        var fullname: UITextField?
+        var postition: UITextField?
+        var address: UITextField?
+        var phone: UITextField?
+        var email: UITextField?
+        
+        let dialogMessage = UIAlertController(title: "New Contact", message: "Please enter following fields", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "Add", style: .default, handler: { (action) -> Void in
+            print("Ok button tapped")
+            
+            if let fullnameinput = fullname?.text {
+                //print("User entered \(fullnameinput)")
+                self.add?["name"] = fullnameinput
+            }
+            
+            if let positioninput = postition?.text {
+                //print("User entered \(positioninput)")
+                self.add?["position"] = positioninput
+            }
+            if let addressinput = address?.text {
+                //print("User entered \(addressinput)")
+                self.add?["address"] = addressinput
+            }
+            if let phoneinput = phone?.text {
+                //print("User entered \(phoneinput)")
+                self.add?["phone"] = phoneinput
+            }
+            if let emailinput = email?.text {
+                //print("User entered \(emailinput)")
+                self.add?["email"] = emailinput
+            }
+            
+            self.add?["belong"] = self.users?.uid
+            //var random = self.ref.childByAutoId().key
+            //print(self.add)
+            self.myref.child(self.myref.childByAutoId().key).setValue(self.add)
+            
+            self.tableView.reloadData()
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            print("Cancel button tapped")
+        }
+        
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        dialogMessage.addTextField { (textField) -> Void in
+            
+            fullname = textField
+            fullname?.placeholder = "Type in Full name"
+            
+        }
+        dialogMessage.addTextField { (textField) -> Void in
+
+            postition = textField
+            postition?.placeholder = "Type in short description"
+
+        }
+        dialogMessage.addTextField { (textField) -> Void in
+            
+            address = textField
+            address?.placeholder = "Type in address"
+            
+        }
+        dialogMessage.addTextField { (textField) -> Void in
+
+            phone = textField
+            phone?.placeholder = "Type in your phone number"
+
+        }
+        dialogMessage.addTextField { (textField) -> Void in
+            
+            
+            email = textField
+            email?.placeholder = "Type in email"
+            
+        }
+        
+        
+        
+        self.present(dialogMessage, animated: true, completion: nil)
+        
+        
+        
+        
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //array.sort { $0 < $1 }
+       //generateWordsDict()
+        
+        //print(content)
+        print(users?.uid)
+        
+        let ref = FIRDatabase.database().reference().child("users")
+        
+        
+        ref.observe(.value,with: { (snapshot) in
+            
+            //var tt : [String] = []
+            var tt: Dictionary<String,String>? = Dictionary()
+            //tt.removeAll()
+            //var tempInfo : Dictionary<String,contactInfo>? = Dictionary()
+            //var tempInfo : Dictionary<String,[String]>? = Dictionary()
+            
+            if !snapshot.exists(){return}
+            
+            if let ConctactDict = snapshot.value as? NSDictionary {
+                
+                for each in ConctactDict{
+                    
+                    let test = each.key as! String
+                    //tempInfo?[test]? = contactInfo(address:"",email:"",phone:"",other:"")
+                   
+                    let rref = FIRDatabase.database().reference().child("users").child(test)
+                    
+                    rref.observe(.value,with: { (snapshot1) in
+                        
+                        if !snapshot1.exists(){return}
+                        
+                        if let ConctactDetailDict = snapshot1.value as? NSDictionary {
+                            
+                            if (ConctactDetailDict.value(forKey: "belong") as? String == self.users?.uid){
+                                
+                                self.tempInfo?[test] = contactInfo()
+                                
+                                tt?[test] = (ConctactDetailDict.value(forKey: "name") as? String)!
+                                //tt.append((ConctactDetailDict.value(forKey: "name") as? String)!)
+            
+                                
+                                self.tempInfo?[test]? = contactInfo(address:(ConctactDetailDict.value(forKey: "address") as? String)!,email:(ConctactDetailDict.value(forKey: "email") as? String)!,phone:(ConctactDetailDict.value(forKey: "phone") as? String)!,other:(ConctactDetailDict.value(forKey: "position") as? String)!,key:test)
+                                self.key = test
+
+                                
+                                self.array = tt
+                                self.putcontent()
+                                self.tableView.reloadData()
+                                print(self.array)
+                                //print(self.tempInfo?[test])
+                                
+                            }
+                        }
+                    })
+                }
+                print("2")
+            }
+            print("3")
+        })
+        
+        
+        
+   
+        //putcontent()
+        print("ViewDidLoad")
+        
+      
+        
+
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,25 +297,89 @@ class ContactTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        // numberOfSectionsInTableView returns number of sections in table. In will be count of our sections array.
+        return content!.count
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return contentkeys[section]
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        let wordkey = contentkeys[section]
+        if let wordsValues = content?[wordkey]{
+            return wordsValues.count
+        }
         return 0
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
+        
 
-        // Configure the cell...
-
+        
+        let wordkey = contentkeys[indexPath.section]
+        if let wordvalue = content?[wordkey.lowercased()]{
+            cell.textLabel?.text = wordvalue[indexPath.row].name // some issue here
+        }
+        
         return cell
     }
-    */
+    
+    
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return contentkeys
+    }
+    
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        guard let index = contentkeys.index(of:title) else {
+            return -1
+        }
+        return index
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
+        let wordkey = contentkeys[indexPath.section]
+        
+        if let wordvalue = content?[wordkey.lowercased()]{
+            
+            pretitle = wordvalue[indexPath.row].name // some issue here
+        }
 
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "GotoDetail"{
+            
+        //let controller = segue.destination as! DetailTableViewController
+        let controller = segue.destination as! DetailViewController
+            
+            
+        let wordkey = contentkeys[(self.tableView.indexPathForSelectedRow?.section)!]
+            
+        if let wordvalue = content?[wordkey.lowercased()]{
+                
+                controller.Detailtitle = wordvalue[(self.tableView.indexPathForSelectedRow?.row)!].name // some issue here
+            
+                controller.tempInfo = self.tempInfo
+                controller.key = wordvalue[(self.tableView.indexPathForSelectedRow?.row)!].uid
+            }
+        
+        //controller.Detailtitle = pretitle
+            
+        }
+        
+        
+        
+        
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

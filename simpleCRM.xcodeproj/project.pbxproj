@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04536B401E27A11C00703AE3 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04536B3F1E27A11C00703AE3 /* ContactTableViewController.swift */; };
+		04536B441E2B6E4A00703AE3 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04536B431E2B6E4A00703AE3 /* DetailTableViewController.swift */; };
+		04A287AF1E2BD06F00F47526 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A287AE1E2BD06F00F47526 /* DetailViewController.swift */; };
+		04A287B41E2CE1C900F47526 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A287B31E2CE1C900F47526 /* GoogleService-Info.plist */; };
 		04BB5ED11E2798E200F42BB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5ED01E2798E200F42BB4 /* AppDelegate.swift */; };
 		04BB5ED31E2798E200F42BB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5ED21E2798E200F42BB4 /* ViewController.swift */; };
 		04BB5ED61E2798E200F42BB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BB5ED41E2798E200F42BB4 /* Main.storyboard */; };
@@ -14,6 +18,7 @@
 		04BB5EDB1E2798E200F42BB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BB5ED91E2798E200F42BB4 /* LaunchScreen.storyboard */; };
 		04BB5EE61E2798E200F42BB4 /* simpleCRMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5EE51E2798E200F42BB4 /* simpleCRMTests.swift */; };
 		04BB5EF11E2798E200F42BB4 /* simpleCRMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5EF01E2798E200F42BB4 /* simpleCRMUITests.swift */; };
+		96B9B87B9EC4D186144C6168 /* Pods_simpleCRM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A42520590B78F10A8E3C8D /* Pods_simpleCRM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04536B3F1E27A11C00703AE3 /* ContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
+		04536B431E2B6E4A00703AE3 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		04A287AE1E2BD06F00F47526 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		04A287B21E2CD89000F47526 /* simpleCRM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = simpleCRM.entitlements; sourceTree = "<group>"; };
+		04A287B31E2CE1C900F47526 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04BB5ECD1E2798E200F42BB4 /* simpleCRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleCRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BB5ED01E2798E200F42BB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04BB5ED21E2798E200F42BB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +57,9 @@
 		04BB5EEC1E2798E200F42BB4 /* simpleCRMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simpleCRMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BB5EF01E2798E200F42BB4 /* simpleCRMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simpleCRMUITests.swift; sourceTree = "<group>"; };
 		04BB5EF21E2798E200F42BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D678DB30D787E6314E7CABB /* Pods-simpleCRM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleCRM.release.xcconfig"; path = "Pods/Target Support Files/Pods-simpleCRM/Pods-simpleCRM.release.xcconfig"; sourceTree = "<group>"; };
+		2BF783E0AC9401BAE17398BC /* Pods-simpleCRM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleCRM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simpleCRM/Pods-simpleCRM.debug.xcconfig"; sourceTree = "<group>"; };
+		76A42520590B78F10A8E3C8D /* Pods_simpleCRM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simpleCRM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B9B87B9EC4D186144C6168 /* Pods_simpleCRM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +95,8 @@
 				04BB5EE41E2798E200F42BB4 /* simpleCRMTests */,
 				04BB5EEF1E2798E200F42BB4 /* simpleCRMUITests */,
 				04BB5ECE1E2798E200F42BB4 /* Products */,
+				B857BA1C79FC6F60BA8D94B0 /* Pods */,
+				9EA4FB42EB321FFA1735D7AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +113,17 @@
 		04BB5ECF1E2798E200F42BB4 /* simpleCRM */ = {
 			isa = PBXGroup;
 			children = (
+				04A287B31E2CE1C900F47526 /* GoogleService-Info.plist */,
+				04A287B21E2CD89000F47526 /* simpleCRM.entitlements */,
 				04BB5ED01E2798E200F42BB4 /* AppDelegate.swift */,
 				04BB5ED21E2798E200F42BB4 /* ViewController.swift */,
 				04BB5ED41E2798E200F42BB4 /* Main.storyboard */,
 				04BB5ED71E2798E200F42BB4 /* Assets.xcassets */,
 				04BB5ED91E2798E200F42BB4 /* LaunchScreen.storyboard */,
 				04BB5EDC1E2798E200F42BB4 /* Info.plist */,
+				04536B3F1E27A11C00703AE3 /* ContactTableViewController.swift */,
+				04536B431E2B6E4A00703AE3 /* DetailTableViewController.swift */,
+				04A287AE1E2BD06F00F47526 /* DetailViewController.swift */,
 			);
 			path = simpleCRM;
 			sourceTree = "<group>";
@@ -125,6 +146,23 @@
 			path = simpleCRMUITests;
 			sourceTree = "<group>";
 		};
+		9EA4FB42EB321FFA1735D7AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76A42520590B78F10A8E3C8D /* Pods_simpleCRM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B857BA1C79FC6F60BA8D94B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BF783E0AC9401BAE17398BC /* Pods-simpleCRM.debug.xcconfig */,
+				0D678DB30D787E6314E7CABB /* Pods-simpleCRM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04BB5EF51E2798E200F42BB4 /* Build configuration list for PBXNativeTarget "simpleCRM" */;
 			buildPhases = (
+				979D13712F0AB5EAE2A5A7A4 /* [CP] Check Pods Manifest.lock */,
 				04BB5EC91E2798E200F42BB4 /* Sources */,
 				04BB5ECA1E2798E200F42BB4 /* Frameworks */,
 				04BB5ECB1E2798E200F42BB4 /* Resources */,
+				BB96A287CD0A70F1A521B37F /* [CP] Embed Pods Frameworks */,
+				90A051E2923E9E627A48EB03 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +236,11 @@
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = ME5B48L8EA;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					04BB5EE01E2798E200F42BB4 = {
 						CreatedOnToolsVersion = 8.2;
@@ -236,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BB5EDB1E2798E200F42BB4 /* LaunchScreen.storyboard in Resources */,
+				04A287B41E2CE1C900F47526 /* GoogleService-Info.plist in Resources */,
 				04BB5ED81E2798E200F42BB4 /* Assets.xcassets in Resources */,
 				04BB5ED61E2798E200F42BB4 /* Main.storyboard in Resources */,
 			);
@@ -257,13 +304,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		90A051E2923E9E627A48EB03 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-simpleCRM/Pods-simpleCRM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		979D13712F0AB5EAE2A5A7A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BB96A287CD0A70F1A521B37F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-simpleCRM/Pods-simpleCRM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04BB5EC91E2798E200F42BB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04536B441E2B6E4A00703AE3 /* DetailTableViewController.swift in Sources */,
 				04BB5ED31E2798E200F42BB4 /* ViewController.swift in Sources */,
+				04A287AF1E2BD06F00F47526 /* DetailViewController.swift in Sources */,
 				04BB5ED11E2798E200F42BB4 /* AppDelegate.swift in Sources */,
+				04536B401E27A11C00703AE3 /* ContactTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,8 +511,10 @@
 		};
 		04BB5EF61E2798E200F42BB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BF783E0AC9401BAE17398BC /* Pods-simpleCRM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = simpleCRM/simpleCRM.entitlements;
 				DEVELOPMENT_TEAM = ME5B48L8EA;
 				INFOPLIST_FILE = simpleCRM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -426,8 +526,10 @@
 		};
 		04BB5EF71E2798E200F42BB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D678DB30D787E6314E7CABB /* Pods-simpleCRM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = simpleCRM/simpleCRM.entitlements;
 				DEVELOPMENT_TEAM = ME5B48L8EA;
 				INFOPLIST_FILE = simpleCRM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -514,6 +616,7 @@
 				04BB5EF71E2798E200F42BB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04BB5EF81E2798E200F42BB4 /* Build configuration list for PBXNativeTarget "simpleCRMTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +625,7 @@
 				04BB5EFA1E2798E200F42BB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04BB5EFB1E2798E200F42BB4 /* Build configuration list for PBXNativeTarget "simpleCRMUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +634,7 @@
 				04BB5EFD1E2798E200F42BB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

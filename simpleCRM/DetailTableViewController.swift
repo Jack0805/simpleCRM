@@ -8,11 +8,17 @@
 
 import UIKit
 
+
+
+
 class DetailTableViewController: UITableViewController {
+    
+    var Detailtitle = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = Detailtitle
+   
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
