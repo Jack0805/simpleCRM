@@ -18,6 +18,9 @@
 		04BB5EDB1E2798E200F42BB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BB5ED91E2798E200F42BB4 /* LaunchScreen.storyboard */; };
 		04BB5EE61E2798E200F42BB4 /* simpleCRMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5EE51E2798E200F42BB4 /* simpleCRMTests.swift */; };
 		04BB5EF11E2798E200F42BB4 /* simpleCRMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5EF01E2798E200F42BB4 /* simpleCRMUITests.swift */; };
+		04D188CC1E2F4A51009D98D9 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D188CB1E2F4A51009D98D9 /* OrderTableViewController.swift */; };
+		04D188D31E2FACCF009D98D9 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D188D11E2FACCF009D98D9 /* OrderTableViewCell.swift */; };
+		04D188D41E2FACCF009D98D9 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D188D21E2FACCF009D98D9 /* OrderTableViewCell.xib */; };
 		96B9B87B9EC4D186144C6168 /* Pods_simpleCRM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A42520590B78F10A8E3C8D /* Pods_simpleCRM.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 		04BB5EEC1E2798E200F42BB4 /* simpleCRMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simpleCRMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BB5EF01E2798E200F42BB4 /* simpleCRMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simpleCRMUITests.swift; sourceTree = "<group>"; };
 		04BB5EF21E2798E200F42BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04D188CB1E2F4A51009D98D9 /* OrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
+		04D188D11E2FACCF009D98D9 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		04D188D21E2FACCF009D98D9 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
 		0D678DB30D787E6314E7CABB /* Pods-simpleCRM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleCRM.release.xcconfig"; path = "Pods/Target Support Files/Pods-simpleCRM/Pods-simpleCRM.release.xcconfig"; sourceTree = "<group>"; };
 		2BF783E0AC9401BAE17398BC /* Pods-simpleCRM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleCRM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simpleCRM/Pods-simpleCRM.debug.xcconfig"; sourceTree = "<group>"; };
 		76A42520590B78F10A8E3C8D /* Pods_simpleCRM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simpleCRM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +130,9 @@
 				04536B3F1E27A11C00703AE3 /* ContactTableViewController.swift */,
 				04536B431E2B6E4A00703AE3 /* DetailTableViewController.swift */,
 				04A287AE1E2BD06F00F47526 /* DetailViewController.swift */,
+				04D188CB1E2F4A51009D98D9 /* OrderTableViewController.swift */,
+				04D188D11E2FACCF009D98D9 /* OrderTableViewCell.swift */,
+				04D188D21E2FACCF009D98D9 /* OrderTableViewCell.xib */,
 			);
 			path = simpleCRM;
 			sourceTree = "<group>";
@@ -282,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BB5EDB1E2798E200F42BB4 /* LaunchScreen.storyboard in Resources */,
+				04D188D41E2FACCF009D98D9 /* OrderTableViewCell.xib in Resources */,
 				04A287B41E2CE1C900F47526 /* GoogleService-Info.plist in Resources */,
 				04BB5ED81E2798E200F42BB4 /* Assets.xcassets in Resources */,
 				04BB5ED61E2798E200F42BB4 /* Main.storyboard in Resources */,
@@ -360,7 +370,9 @@
 				04536B441E2B6E4A00703AE3 /* DetailTableViewController.swift in Sources */,
 				04BB5ED31E2798E200F42BB4 /* ViewController.swift in Sources */,
 				04A287AF1E2BD06F00F47526 /* DetailViewController.swift in Sources */,
+				04D188D31E2FACCF009D98D9 /* OrderTableViewCell.swift in Sources */,
 				04BB5ED11E2798E200F42BB4 /* AppDelegate.swift in Sources */,
+				04D188CC1E2F4A51009D98D9 /* OrderTableViewController.swift in Sources */,
 				04536B401E27A11C00703AE3 /* ContactTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

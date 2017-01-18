@@ -375,10 +375,7 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
         //controller.Detailtitle = pretitle
             
         }
-        
-        
-        
-        
+
     }
     /*
     // Override to support conditional editing of the table view.
@@ -388,17 +385,46 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            let dialogMessage = UIAlertController(title: "Delete Contact", message: "Are you sure ?", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "Delete", style: .default, handler: { (action) -> Void in
+                //print("Delete button tapped")
+                
+                let wordkey = self.contentkeys[indexPath.section]
+                
+                if let wordvalue = self.content?[wordkey.lowercased()]{
+                    
+                    let uid = wordvalue[indexPath.row].uid
+                    
+                    self.myref.child(uid!).removeValue()
+                    
+                    
+                    tableView.reloadData()
+                }
+            })
+            
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+                
+                //print("Cancel button tapped")
+            }
+            
+            dialogMessage.addAction(ok)
+            dialogMessage.addAction(cancel)
+            self.present(dialogMessage, animated: true, completion: nil)
+
+
+            
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

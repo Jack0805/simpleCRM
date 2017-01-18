@@ -9,11 +9,15 @@
 import UIKit
 import Firebase
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,UITextFieldDelegate {
     
     var Detailtitle = ""
     var key = ""
     var tempInfo : Dictionary<String,contactInfo>? = Dictionary()
+    
+    let myref = FIRDatabase.database().reference().child("users")
+    
+    var users = FIRAuth.auth()?.currentUser
 
     @IBOutlet weak var DetailImage: UIImageView!
     
@@ -37,6 +41,98 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var OrderBT: UIButton!
     
+    var add : Dictionary<String,String>? = Dictionary()
+    
+    @IBAction func editClicked(_ sender: Any) {
+        
+        var fullname: UITextField?
+        
+        var postition: UITextField?
+        var address: UITextField?
+        var phone: UITextField?
+        var email: UITextField?
+        
+        let dialogMessage = UIAlertController(title: "Edit", message: "Please enter following fields", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "Update", style: .default, handler: { (action) -> Void in
+            print("Ok button tapped")
+            
+            if let fullnameinput = fullname?.text {
+                //print("User entered \(fullnameinput)")
+                self.add?["name"] = fullnameinput
+            }
+            
+            if let positioninput = postition?.text {
+                //print("User entered \(positioninput)")
+                self.add?["position"] = positioninput
+            }
+            if let addressinput = address?.text {
+                //print("User entered \(addressinput)")
+                self.add?["address"] = addressinput
+            }
+            if let phoneinput = phone?.text {
+                //print("User entered \(phoneinput)")
+                self.add?["phone"] = phoneinput
+            }
+            if let emailinput = email?.text {
+                //print("User entered \(emailinput)")
+                self.add?["email"] = emailinput
+            }
+            
+            self.add?["belong"] = self.users?.uid
+            //var random = self.ref.childByAutoId().key
+            //print(self.add)
+            self.myref.child(self.key).setValue(self.add)
+            
+            //self.tableView.reloadData()
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            print("Cancel button tapped")
+        }
+        
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        dialogMessage.addTextField { (textField) -> Void in
+            
+            fullname = textField
+            fullname?.text = self.DetailName.text
+            
+        }
+        dialogMessage.addTextField { (textField) -> Void in
+            
+            postition = textField
+            postition?.text = self.DetailPosition.text
+            
+        }
+        dialogMessage.addTextField { (textField) -> Void in
+            
+            address = textField
+            address?.text = self.DetailAddress.text
+            
+        }
+        dialogMessage.addTextField { (textField) -> Void in
+            
+            phone = textField
+            phone?.text = self.DetailPhone.text
+            
+        }
+        dialogMessage.addTextField { (textField) -> Void in
+            
+            
+            email = textField
+            email?.text = self.DetailEmail.text
+            
+        }
+        
+        
+        
+        self.present(dialogMessage, animated: true, completion: nil)
+        
+
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
