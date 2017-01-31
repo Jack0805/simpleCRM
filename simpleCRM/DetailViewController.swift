@@ -43,6 +43,10 @@ class DetailViewController: UIViewController,UITextFieldDelegate {
     
     var add : Dictionary<String,String>? = Dictionary()
     
+    @IBAction func personalorder(_ sender: Any) {
+        
+        
+    }
     @IBAction func editClicked(_ sender: Any) {
         
         var fullname: UITextField?

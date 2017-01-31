@@ -59,6 +59,8 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
     //var array : Dictionary<String,String>? = Dictionary()
     
     var complete = false
+    
+    var isfromaddorder = false
  
     let wordIndexTitles = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
     
@@ -111,12 +113,7 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
     }
     
     
-    @IBAction func logoutClicked(_ sender: Any) {
-        
-        self.dismiss(animated:true,completion:nil)
-    }
-    
-    @IBAction func addClicked(_ sender: Any) {
+    @IBAction func add(_ sender: Any) {
         
         var fullname: UITextField?
         var postition: UITextField?
@@ -173,10 +170,10 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
             
         }
         dialogMessage.addTextField { (textField) -> Void in
-
+            
             postition = textField
             postition?.placeholder = "Type in short description"
-
+            
         }
         dialogMessage.addTextField { (textField) -> Void in
             
@@ -185,10 +182,10 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
             
         }
         dialogMessage.addTextField { (textField) -> Void in
-
+            
             phone = textField
             phone?.placeholder = "Type in your phone number"
-
+            
         }
         dialogMessage.addTextField { (textField) -> Void in
             
@@ -203,10 +200,31 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
         self.present(dialogMessage, animated: true, completion: nil)
         
         
-        
-        
+
         
     }
+    
+    @IBAction func Logout(_ sender: Any) {
+        
+         self.dismiss(animated:true,completion:nil)
+    }
+    
+    
+    /*@IBAction func logoutClicked(_ sender: Any) {
+        
+        self.dismiss(animated:true,completion:nil)
+    }
+    
+    @IBAction func addClicked(_ sender: Any) {
+        
+    
+        
+        
+    }*/
+    
+ 
+   
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -216,16 +234,14 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
         //print(content)
         print(users?.uid)
         
+      
+        
         let ref = FIRDatabase.database().reference().child("users")
         
         
         ref.observe(.value,with: { (snapshot) in
             
-            //var tt : [String] = []
             var tt: Dictionary<String,String>? = Dictionary()
-            //tt.removeAll()
-            //var tempInfo : Dictionary<String,contactInfo>? = Dictionary()
-            //var tempInfo : Dictionary<String,[String]>? = Dictionary()
             
             if !snapshot.exists(){return}
             
@@ -343,20 +359,83 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        
+       
         let wordkey = contentkeys[indexPath.section]
         
         if let wordvalue = content?[wordkey.lowercased()]{
             
-            pretitle = wordvalue[indexPath.row].name // some issue here
+            pretitle = wordvalue[indexPath.row].name
+            
+            print(wordvalue[indexPath.row].uid)
+            
+            if (self.isfromaddorder == true){
+                
+                var payment: UITextField?
+                
+         
+               
+                
+                let dialogMessage = UIAlertController(title: "New Order", message: "Please enter following fields", preferredStyle: .alert)
+                
+                let ok = UIAlertAction(title: "Create", style: .default, handler: { (action) -> Void in
+                    print("Ok button tapped")
+                    
+                    if let paymentinput = payment?.text {
+                        //print("User entered \(fullnameinput)")
+                        let random = FIRDatabase.database().reference().childByAutoId().key
+                        
+                        FIRDatabase.database().reference().child("orders").child(random).child("customer").setValue(wordvalue[indexPath.row].name)
+                        
+                        FIRDatabase.database().reference().child("orders").child(random).child("payment").setValue(paymentinput)
+                        
+                        FIRDatabase.database().reference().child("orders").child(random).child("subtotla").setValue(0.00)
+                        
+                        FIRDatabase.database().reference().child("orders").child(random).child("time").setValue("January,05,2016")
+                        
+                        FIRDatabase.database().reference().child("orders").child(random).child("complete").setValue(false)
+                        
+                        FIRDatabase.database().reference().child("orders").child(random).child("customerid").setValue(wordvalue[indexPath.row].uid)
+                        
+                        FIRDatabase.database().reference().child("orders").child(random).child("belong").setValue(FIRAuth.auth()?.currentUser?.uid)
+                        
+                        
+                    }
+                    
+                    
+                    
+                    self.tableView.reloadData()
+                })
+                
+                let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+                    print("Cancel button tapped")
+                }
+                
+                dialogMessage.addAction(ok)
+                dialogMessage.addAction(cancel)
+                
+                dialogMessage.addTextField { (textField) -> Void in
+                    
+                    payment = textField
+                    payment?.placeholder = "Payment method"
+                    
+                }
+                
+                
+                
+                self.present(dialogMessage, animated: true, completion: nil)
+            }
+            
+            
+            // some issue here
         }
-
+        
+  
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "GotoDetail"{
+        if (segue.identifier == "GotoDetail" && self.isfromaddorder == false){
             
         //let controller = segue.destination as! DetailTableViewController
         let controller = segue.destination as! DetailViewController
@@ -423,6 +502,20 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier{
+            if ident == "GotoDetail"{
+                
+                if (self.isfromaddorder == true){
+                    return false
+                }
+            }
+        }
+        
+        return true
+        
     }
     
 
