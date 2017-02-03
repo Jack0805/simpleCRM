@@ -39,7 +39,9 @@ class ProductTableViewController: UITableViewController {
     var users = FIRAuth.auth()?.currentUser
     
     var isfromaddproduct = false
+    //var isfromorderview = false
     var orderid = ""
+    var subtotla = 0.00
     
     @IBAction func AddPro(_ sender: Any) {
         
@@ -202,8 +204,15 @@ class ProductTableViewController: UITableViewController {
         cell.ProductName.text = productOB[indexPath.row].productname
         cell.ProductPrice.text = "\(productOB[indexPath.row].productprice!)"
         cell.ProductQuan.text = "\(productOB[indexPath.row].productquan!)"
+        if(productOB[indexPath.row].productquan! == 0){
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        cell.ProductName.textColor = UIColor.gray
+        cell.ProductPrice.textColor = UIColor.gray
+        cell.ProductQuan.textColor = UIColor.gray
+        cell.dollar.textColor = UIColor.gray
+        //cell.selectionStyle = UITableViewCellSelectionStyle.gray
+        }
         
-                
 
         // Configure the cell...
 
@@ -213,7 +222,7 @@ class ProductTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if self.isfromaddproduct == true {
+        if (self.isfromaddproduct == true && self.productOB[indexPath.row].productquan != 0) {
             
 
                 
@@ -229,24 +238,23 @@ class ProductTableViewController: UITableViewController {
                     //let random = FIRDatabase.database().reference().childByAutoId().key
                     
                     
-                    
+                    let proid = self.productOB[indexPath.row].pid
+                    let proto = self.productOB[indexPath.row].productquan
                     let quaninput = Int((quan?.text)!)
                     let productname = self.productOB[indexPath.row].productname
                     let productprice = self.productOB[indexPath.row].productprice
                     let total = Double(quaninput!) * productprice!
-                    
+                    self.subtotla = self.subtotla + total
                     //self.add?["belong"] = self.users?.uid
                     let random = FIRDatabase.database().reference().childByAutoId().key
                     
-                    //let uid = self.productOB[indexPath.row].pid
-                    //print(self.add)
-                    //self.myref.child(self.productOB[indexPath.row].pid).child("belong").setValue(self.users?.uid)
                     self.addref.child(self.orderid).child("products").child(random).child("productname").setValue(productname)
                 self.addref.child(self.orderid).child("products").child(random).child("productsingleprice").setValue(productprice)
                     self.addref.child(self.orderid).child("products").child(random).child("productquntity").setValue(quaninput)
-                    self.addref.child(self.orderid).child("products").child(random).child("productquntity").setValue(quaninput)
+                    //self.addref.child(self.orderid).child("products").child(random).child("productquntity").setValue(quaninput)
                     self.addref.child(self.orderid).child("products").child(random).child("productprice").setValue(total)
-                    
+                    self.addref.child(self.orderid).child("subtotla").setValue(self.subtotla)
+                    self.myref.child(proid!).child("productquan").setValue(proto! - quaninput!)
                     //self.tableView.reloadData()
                 })
                 
@@ -312,6 +320,10 @@ class ProductTableViewController: UITableViewController {
     }*/
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+       
+        
+        
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
             print("more button tapped")
             
@@ -334,6 +346,8 @@ class ProductTableViewController: UITableViewController {
                 
                 
                 let quaninput = Int((productquan?.text)!)
+                
+                
                 
                 //self.add?["belong"] = self.users?.uid
                 //var random = self.ref.childByAutoId().key
@@ -385,6 +399,7 @@ class ProductTableViewController: UITableViewController {
         }
         edit.backgroundColor = UIColor.blue
         
+        
         let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
             //print("favorite button tapped")
             
@@ -420,7 +435,11 @@ class ProductTableViewController: UITableViewController {
         }
         share.backgroundColor = UIColor.blue*/
         
+ 
         return [edit, delete]
+        
+    
+        
     }
     
 

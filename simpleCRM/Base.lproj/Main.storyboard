@@ -243,6 +243,102 @@
             </objects>
             <point key="canvasLocation" x="3554" y="804"/>
         </scene>
+        <!--Statics-->
+        <scene sceneID="C8G-iJ-FeU">
+            <objects>
+                <navigationController id="XSP-Uc-QNo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Statics" id="iFn-dd-PR8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YVg-HW-RIE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mkc-lO-5fQ" kind="relationship" relationship="rootViewController" id="2oO-Xj-1w9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2y-Lw-lEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1534" y="2375"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lA1-jb-VmJ">
+            <objects>
+                <viewController id="mkc-lO-5fQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kGS-zA-dCQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="V3K-li-PCK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="71o-PV-odO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb9-dd-KRt">
+                                <rect key="frame" x="40" y="172" width="295" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Sales track">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LV4-Fu-R1W" kind="show" id="UE5-pF-AZ5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58g-mn-lZd">
+                                <rect key="frame" x="40" y="298" width="295" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Sales distribution">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="syr-bc-gHe" kind="show" id="VW2-zJ-n5i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5Br-BW-Mll"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwG-F1-Kz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2480.8000000000002" y="2380.6596701649178"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CRL-7U-Z6I">
+            <objects>
+                <viewController id="syr-bc-gHe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MTM-nv-uOc"/>
+                        <viewControllerLayoutGuide type="bottom" id="7QV-WA-BYT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ll5-5D-dLz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7M-Dj-yyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3432" y="2767"/>
+        </scene>
+        <!--Sales Track View Controller-->
+        <scene sceneID="ogf-FM-ffL">
+            <objects>
+                <viewController id="LV4-Fu-R1W" customClass="SalesTrackViewController" customModule="simpleCRM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xli-UC-lpj"/>
+                        <viewControllerLayoutGuide type="bottom" id="V8S-3w-Lsu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KWc-q1-5cq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sjj-UF-bxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3431.1999999999998" y="2100"/>
+        </scene>
         <!--Orders-->
         <scene sceneID="8NL-gh-FfV">
             <objects>
@@ -437,6 +533,7 @@
                         <segue destination="Gbk-f6-Ycb" kind="relationship" relationship="viewControllers" id="tcy-Bo-xF3"/>
                         <segue destination="1Gq-rK-E3N" kind="relationship" relationship="viewControllers" id="ZHW-5w-25H"/>
                         <segue destination="ASd-Cq-za5" kind="relationship" relationship="viewControllers" id="76U-vz-I5g"/>
+                        <segue destination="XSP-Uc-QNo" kind="relationship" relationship="viewControllers" id="yFG-SW-M8x"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soA-9j-WsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -462,7 +559,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Eru-ZX-lba"/>
+        <segue reference="WvB-w5-527"/>
         <segue reference="j5a-fa-8fE"/>
         <segue reference="PAW-43-pp7"/>
     </inferredMetricsTieBreakers>

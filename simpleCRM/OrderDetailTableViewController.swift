@@ -16,6 +16,7 @@ class OrderDetailTableViewController: UITableViewController {
     var customerid = ""
     var customername = ""
     var orderkey = ""
+    var subtotal = 0.00
     var finished = false
     var products = [orderDetail]()
     
@@ -193,6 +194,7 @@ class OrderDetailTableViewController: UITableViewController {
         let controller = segue.destination as! ProductTableViewController
         controller.isfromaddproduct = true
         controller.orderid = orderkey
+        controller.subtotla = subtotal
         }
     }
     
@@ -221,11 +223,16 @@ class OrderDetailTableViewController: UITableViewController {
                 
                 let uid = self.products[indexPath.row].proid
                 let newtotal = Double(quaninput!) * self.products[indexPath.row].productsingleprice
+                self.subtotal = newtotal + self.subtotal
                 //print(self.add)
                 //self.myref.child(self.productOB[indexPath.row].pid).child("belong").setValue(self.users?.uid)
                 FIRDatabase.database().reference().child("orders").child(self.orderkey).child("products").child(uid!).child("productquntity").setValue(quaninput)
                 
              FIRDatabase.database().reference().child("orders").child(self.orderkey).child("products").child(uid!).child("productprice").setValue(newtotal)
+                
+                FIRDatabase.database().reference().child("orders").child(self.orderkey).child("subtotla").setValue(self.subtotal)
+                
+                
                 
                 
                 //self.productOB.removeAll()
@@ -263,10 +270,12 @@ class OrderDetailTableViewController: UITableViewController {
                 
                 
                 let deletekey = self.products[indexPath.row].proid
+                let prototal = self.products[indexPath.row].productprice
+                self.subtotal = self.subtotal - prototal!
                 
                 FIRDatabase.database().reference().child("orders").child(self.orderkey).child("products").child(deletekey!).removeValue()
                 
-                
+                FIRDatabase.database().reference().child("orders").child(self.orderkey).child("subtotla").setValue(self.subtotal)
                 tableView.reloadData()
                 
             })

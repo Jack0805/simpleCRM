@@ -78,6 +78,7 @@ class OrderTableViewController: UITableViewController {
     var customerkey = ""
     var customername = ""
     var orderid = ""
+    var ordertotal = 0.00
     var finished = true
     var displayfinishedorder = false
     var celldic : Dictionary<String,Bool> = Dictionary()
@@ -390,6 +391,7 @@ class OrderTableViewController: UITableViewController {
         self.customername = (orders[Array(orders.keys)[indexPath.row]]?.customer)!
         self.customerkey = (orders[Array(orders.keys)[indexPath.row]]?.customerid)!
         self.orderid = Array(orders.keys)[indexPath.row]
+        self.ordertotal = (orders[Array(orders.keys)[indexPath.row]]?.subtotla)!
         self.finished = false
             
         } else {
@@ -397,6 +399,7 @@ class OrderTableViewController: UITableViewController {
         self.customerkey = (finishedorders[Array(finishedorders.keys)[indexPath.row]]?.customerid)!
         self.customername = (finishedorders[Array(finishedorders.keys)[indexPath.row]]?.customer)!
         self.orderid = Array(finishedorders.keys)[indexPath.row]
+        self.ordertotal = (finishedorders[Array(finishedorders.keys)[indexPath.row]]?.subtotla)!
         self.finished = true
 
         }
@@ -428,6 +431,8 @@ class OrderTableViewController: UITableViewController {
             controller.customername = self.customername
             controller.orderkey = self.orderid
             controller.finished = self.finished
+            controller.subtotal = self.ordertotal
+            
             
         } else if segue.identifier == "addorder"{
             

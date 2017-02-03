@@ -10,5 +10,6 @@ target 'simpleCRM' do
   pod 'Firebase/Auth'
   pod 'EPContactsPicker'
   pod "ESPullToRefresh"
+  pod 'ScrollableGraphView'
 
 end

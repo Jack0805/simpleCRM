@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ScrollableGraphView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -57,17 +62,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>380C9273D640136FC3B15FC996591A14</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>83D04EDAE5838FE3657C87DD12181688</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B49654B82B0313D988195D5587273EF</key>
+		<key>990D00E9C6B2891FFEC60E7904B9EAE5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9021A3D72667FBD43EFEC69295F8E2C</key>
+		<key>9B49654B82B0313D988195D5587273EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

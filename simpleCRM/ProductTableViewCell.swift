@@ -22,6 +22,7 @@ class ProductTableViewCell: UITableViewCell {
     
     @IBOutlet weak var ProductQuan: UILabel!
     
+    @IBOutlet weak var dollar: UILabel!
     
    
     
