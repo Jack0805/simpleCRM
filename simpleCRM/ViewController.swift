@@ -47,9 +47,26 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func RegBt(_ sender: Any) {
+
+        FIRAuth.auth()!.createUser(withEmail: username.text!, password: password.text!)
+        { (user, error) in
+            
+            if error != nil {
+                print(error!.localizedDescription)
+                print("user created fail!")
+            }
+            else{
+                
+                //self.performSegue(withIdentifier: "mylogin", sender: nil)
+                
+                
+                print("user created!")
+            }
+        }
+    }
     @IBAction func DidLogTouched(_ sender: Any) {
-        var u = username.text!
-        var p = password.text!
+
         FIRAuth.auth()!.signIn(withEmail: username.text!, password: password.text!)
         
         /*FIRAuth.auth()?.signIn(withEmail: username.text!, password: password.text!) { (user, error) in
@@ -68,8 +85,7 @@ class ViewController: UIViewController {
             }
             
         }*/
-        print(u)
-        print(p)
+
 
     }
 //FIRAuth.auth()!.signIn(withEmail: username.text!, password: password.text!)

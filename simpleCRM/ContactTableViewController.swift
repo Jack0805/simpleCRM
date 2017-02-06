@@ -47,6 +47,7 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
     
     @IBOutlet weak var AddContactBT: UIBarButtonItem!
     
+    @IBOutlet weak var searchbar: UISearchBar!
     let myref = FIRDatabase.database().reference().child("users")
     
     var users = FIRAuth.auth()?.currentUser
@@ -71,14 +72,16 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
     var key = ""
     var contentkeys = [String]()
     var add : Dictionary<String,String>? = Dictionary()
+    //var data = [String]()
+    var filterdata:[String]!
     
     func putcontent(){
         
         
         array?.values.sorted(by: {$0 < $1})
         
-        print(array)
-        
+        print("here\(array)")
+        //self.data = array?.values
         
         
         for each in wordIndexTitles{
@@ -232,7 +235,10 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
        //generateWordsDict()
         
         //print(content)
-        print(users?.uid)
+        //print(users?.uid)
+        
+        tableView.dataSource = self
+        
         
       
         
@@ -381,7 +387,11 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
                     print("Ok button tapped")
                     
                     if let paymentinput = payment?.text {
-                        //print("User entered \(fullnameinput)")
+                        
+                        let date = Date()
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "dd.MM.yyyy"
+                        let result = formatter.string(from: date)
                         let random = FIRDatabase.database().reference().childByAutoId().key
                         
                         FIRDatabase.database().reference().child("orders").child(random).child("customer").setValue(wordvalue[indexPath.row].name)
@@ -390,7 +400,7 @@ class ContactTableViewController: UITableViewController,UITextFieldDelegate{
                         
                         FIRDatabase.database().reference().child("orders").child(random).child("subtotla").setValue(0.00)
                         
-                        FIRDatabase.database().reference().child("orders").child(random).child("time").setValue("January,05,2016")
+                        FIRDatabase.database().reference().child("orders").child(random).child("time").setValue(result)
                         
                         FIRDatabase.database().reference().child("orders").child(random).child("complete").setValue(false)
                         

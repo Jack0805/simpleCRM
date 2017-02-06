@@ -8,6 +8,7 @@
 
 import UIKit
 import ScrollableGraphView
+import Firebase
 
 class SalesTrackViewController: UIViewController {
     
@@ -18,23 +19,58 @@ class SalesTrackViewController: UIViewController {
     
     var label = UILabel()
     var labelConstraints = [NSLayoutConstraint]()
-    
+    var month = ""
     // Data
     let numberOfDataItems = 29
+    let myref = FIRDatabase.database().reference().child("orders")
+    var users = FIRAuth.auth()?.currentUser
     
-    lazy var data: [Double] = self.generateRandomData(self.numberOfDataItems, max: 50)
-    lazy var labels: [String] = self.generateSequentialLabels(self.numberOfDataItems, text: "FEB")
-    
+    lazy var data: [Double] = self.generateRandomData(self.numberOfDataItems, max: 10000)
+    lazy var labels: [String] = self.generateSequentialLabels(self.numberOfDataItems, text: self.month)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        let date = Date()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM"
+        let result = formatter.string(from: date)
+        
+        switch result {
+        case "01":
+            self.month = "Jan"
+        case "02":
+            self.month = "Feb"
+        case "03":
+            self.month = "Mar"
+        case "04":
+            self.month = "Ap"
+        case "05":
+            self.month = "May"
+        case "06":
+            self.month = "Jun"
+        case "07":
+            self.month = "July"
+        case "08":
+            self.month = "Aug"
+        case "09":
+            self.month = "Sep"
+        case "10":
+            self.month = "Oct"
+        case "11":
+            self.month = "Nov"
+        default:
+            self.month = "Dec"
+        }
         graphView = ScrollableGraphView(frame: self.view.frame)
         graphView = createDarkGraph(self.view.frame)
         
         graphView.set(data: data, withLabels: labels)
         graphView.topMargin.add(50.54)
         graphView.bottomMargin.add(140.54)
+        
         self.view.addSubview(graphView)
         //self.myview.addSubview(graphView)
         
@@ -101,7 +137,7 @@ class SalesTrackViewController: UIViewController {
         graphView.shouldAdaptRange = true
         graphView.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         graphView.animationDuration = 1.5
-        graphView.rangeMax = 50
+        graphView.rangeMax = 10000
         graphView.shouldRangeAlwaysStartAtZero = true
         
         return graphView
@@ -259,8 +295,103 @@ class SalesTrackViewController: UIViewController {
     
     // Data Generation
     private func generateRandomData(_ numberOfItems: Int, max: Double) -> [Double] {
+        let calendar = Calendar.current
+        let date = Date()
+        
+        // Calculate start and end of the current year (or month with `.month`):
+        let interval = calendar.dateInterval(of: .month, for: date)!
+        
+        // Compute difference in days:
+        let days = calendar.dateComponents([.day], from: interval.start, to: interval.end).day!
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM"
+        let result = formatter.string(from: date)
+
+        
         var data = [Double]()
-        for _ in 0 ..< numberOfItems {
+        
+        for _ in 0...days{
+            
+            data.append(0.00)
+        }
+        
+        myref.observe(.value,with: { (snapshot) in
+            
+            
+            if !snapshot.exists(){return}
+            
+            if let ConctactDict = snapshot.value as? NSDictionary {
+                
+          
+                for each in ConctactDict{
+                    
+                    let eachkey = each.key as! String
+                    let myref1 = FIRDatabase.database().reference().child("orders").child(eachkey)
+                    
+                    myref1.observe(.value,with: { (snapshot1) in
+                        
+                        if !snapshot1.exists(){return}
+                        
+                        if let OrderDetailDict = snapshot1.value as? NSDictionary {
+                            
+                            if (OrderDetailDict.value(forKey: "belong") as? String == self.users?.uid){
+                                
+                                let mymonth = OrderDetailDict.value(forKey: "time") as? String
+                             
+                                let mm = mymonth?.subString(start: 3, end: -1)
+                                
+                                if (mm == result){
+                                    
+                                let day = mymonth?.subString(start: 0, end: 2)
+                                var myday = 0
+                                if (day == "01"){
+                                    myday = 1
+                                } else if (day == "02"){
+                                    myday = 2
+                                } else if (day == "03"){
+                                    myday = 3
+                                } else if (day == "04"){
+                                    myday = 4
+                                } else if (day == "05"){
+                                    myday = 5
+                                } else if (day == "06"){
+                                    myday = 6
+                                } else if (day == "07"){
+                                    myday = 7
+                                } else if (day == "08"){
+                                    myday = 8
+                                } else if (day == "09"){
+                                    myday = 9
+                                } else {
+                                    myday = Int(myday)
+                                }
+                                
+                                let mydouble = OrderDetailDict.value(forKey: "subtotla") as? Double
+
+                                    
+                                data[myday-1] = data[myday-1] + mydouble!
+                                    
+                       
+                                self.graphView.set(data: data, withLabels: self.labels)
+                                }
+                                
+                                
+                                
+                            }
+                            
+                        }
+                    })
+
+                }
+            }
+        })
+        
+        print(data)
+
+        /*for _ in 0 ..< days {
+            
+            
             var randomNumber = Double(arc4random()).truncatingRemainder(dividingBy: max)
             
             if(arc4random() % 100 < 10) {
@@ -268,13 +399,22 @@ class SalesTrackViewController: UIViewController {
             }
             
             data.append(randomNumber)
-        }
+        }*/
         return data
     }
     
     private func generateSequentialLabels(_ numberOfItems: Int, text: String) -> [String] {
+        let calendar = Calendar.current
+        let date = Date()
+        
+        // Calculate start and end of the current year (or month with `.month`):
+        let interval = calendar.dateInterval(of: .month, for: date)!
+        
+        // Compute difference in days:
+        let days = calendar.dateComponents([.day], from: interval.start, to: interval.end).day!
+
         var labels = [String]()
-        for i in 0 ..< numberOfItems {
+        for i in 0 ..< days {
             labels.append("\(text) \(i+1)")
         }
         return labels
@@ -306,4 +446,14 @@ class SalesTrackViewController: UIViewController {
     }
 
 
+}
+
+extension String {
+    func subString(start: Int, end: Int) -> String {
+        let startIndex = self.index(self.startIndex, offsetBy: start)
+        let endIndex = self.index(startIndex, offsetBy: end)
+        
+        let finalString = self.substring(from: startIndex)
+        return finalString.substring(to: endIndex)
+    }
 }

@@ -17,8 +17,9 @@ class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var SBLable: UILabel!
     @IBOutlet weak var PMLable: UILabel!
     
-    @IBOutlet weak var completeswitch: UISwitch!
+    //@IBOutlet weak var completeswitch: UISwitch!
     
+    @IBOutlet weak var completebutton: UIButton!
     
     
     var cellkey = ""
@@ -38,7 +39,23 @@ class OrderTableViewCell: UITableViewCell {
         
         
     }*/
-    @IBAction func `switch`(_ sender: Any) {
+    
+    @IBAction func completeBT(_ sender: Any) {
+        
+        if (dic[cellkey] == false){
+            self.completebutton.setBackgroundImage(UIImage(named:"checkbox-checked.png"), for: .normal)
+            dic[cellkey] = true
+            //let btimage = UIImage(named:"empty-check-box.png")
+        } else {
+            
+            self.completebutton.setBackgroundImage(UIImage(named:"empty-check-box.png"), for: .normal)
+            dic[cellkey] = false
+            //let btimage = UIImage(named:"checkbox-checked.png")
+        }
+        //self.completebutton.setBackgroundImage(btimage, for: .normal)
+    }
+    
+    /*@IBAction func `switch`(_ sender: Any) {
         
         if completeswitch.isOn{
             //print("\(cellkey) is on, \(isfinishe)")
@@ -54,10 +71,12 @@ class OrderTableViewCell: UITableViewCell {
         //cellDict[cellkey] = !isfinishe
         
         print(dic)
-    }
+    }*/
     override func awakeFromNib() {
        
         super.awakeFromNib()
+        
+
         
         // Initialization code
     }

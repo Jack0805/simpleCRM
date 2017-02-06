@@ -22,28 +22,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MxO-bl-aaa">
-                                <rect key="frame" x="84" y="217" width="212" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8fh-Me-rnl">
-                                <rect key="frame" x="84" y="308" width="212" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8fh-Me-rnl">
+                                <rect key="frame" x="84" y="318" width="212" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0PH-EB-pMR">
-                                <rect key="frame" x="0.0" y="403" width="375" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0PH-EB-pMR">
+                                <rect key="frame" x="0.0" y="395" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log in"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="DidLogTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="92G-Xi-ITI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XG9-ZL-aFK">
+                                <rect key="frame" x="0.0" y="453" width="375" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Register free acccount"/>
+                                <connections>
+                                    <action selector="RegBt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MDa-FC-11k"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MxO-bl-aaa">
+                                <rect key="frame" x="84" y="244" width="212" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sellsy-100" translatesAutoresizingMaskIntoConstraints="NO" id="FSl-Fr-bap">
+                                <rect key="frame" x="123" y="47" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Simple CRM System" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEa-vK-B4f">
+                                <rect key="frame" x="83" y="169" width="212" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.82528257370000002" blue="0.0045134611429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -65,9 +86,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="8zJ-w2-ODy">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" id="xCt-Mj-EvL">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xCt-Mj-EvL" id="P5p-6A-zqh">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
@@ -99,6 +125,9 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchbar" destination="8zJ-w2-ODy" id="K5L-bu-kTF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uf9-65-nye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,12 +161,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="6e6-1l-m62">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="+" id="8dE-2C-OfM">
-                            <connections>
-                                <action selector="addorderaction:" destination="WKV-yt-VTs" id="eZU-ab-5qh"/>
-                                <segue destination="CkR-Li-udl" kind="show" identifier="addorder" id="WvB-w5-527"/>
-                            </connections>
-                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="TCK-l2-ixP">
                             <rect key="frame" x="105" y="7" width="165" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -149,7 +172,12 @@
                                 <action selector="mysegClicked:" destination="WKV-yt-VTs" eventType="valueChanged" id="tDb-ZI-plg"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="ZgP-Tn-QAm"/>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="ZgP-Tn-QAm">
+                            <connections>
+                                <action selector="addo:" destination="WKV-yt-VTs" id="y8H-Lk-bId"/>
+                                <segue destination="CkR-Li-udl" kind="show" identifier="addorder" id="uRZ-sd-VJ3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="myseg" destination="TCK-l2-ixP" id="0pD-Sl-H1j"/>
@@ -167,9 +195,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="uHs-gW-Ktm">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="T2r-yR-cdU" customClass="ProductTableViewCell" customModule="simpleCRM" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T2r-yR-cdU" id="h4W-OD-bU5">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -189,16 +222,21 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchbar" destination="uHs-gW-Ktm" id="0KL-yj-Avf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FU9-QF-K7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2486" y="1591"/>
         </scene>
-        <!--Inventory-->
+        <!--Navigation Controller-->
         <scene sceneID="Wl0-CZ-NqG">
             <objects>
                 <navigationController id="ASd-Cq-za5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Inventory" id="U7k-hV-XtI"/>
+                    <tabBarItem key="tabBarItem" title="" image="Product-50" id="U7k-hV-XtI">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ow4-XT-6gu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -243,11 +281,13 @@
             </objects>
             <point key="canvasLocation" x="3554" y="804"/>
         </scene>
-        <!--Statics-->
+        <!--Navigation Controller-->
         <scene sceneID="C8G-iJ-FeU">
             <objects>
                 <navigationController id="XSP-Uc-QNo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Statics" id="iFn-dd-PR8"/>
+                    <tabBarItem key="tabBarItem" title="" image="Statistics-50" id="iFn-dd-PR8">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YVg-HW-RIE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -339,11 +379,13 @@
             </objects>
             <point key="canvasLocation" x="3431.1999999999998" y="2100"/>
         </scene>
-        <!--Orders-->
+        <!--Navigation Controller-->
         <scene sceneID="8NL-gh-FfV">
             <objects>
                 <navigationController id="1Gq-rK-E3N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Orders" id="fa1-Qm-KcG"/>
+                    <tabBarItem key="tabBarItem" title="" image="Order History-50" id="fa1-Qm-KcG">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CwV-82-eRJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -540,12 +582,14 @@
             </objects>
             <point key="canvasLocation" x="692" y="81"/>
         </scene>
-        <!--Contact-->
+        <!--Navigation Controller-->
         <scene sceneID="7AA-BG-qwH">
             <objects>
                 <navigationController id="Gbk-f6-Ycb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Contact" id="DfL-Mr-SRx"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lpj-Ad-uni">
+                    <tabBarItem key="tabBarItem" title="" image="Contact Card-50" id="DfL-Mr-SRx">
+                        <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Lpj-Ad-uni">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -558,9 +602,16 @@
             <point key="canvasLocation" x="1535" y="81"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Contact Card-50" width="50" height="50"/>
+        <image name="Order History-50" width="50" height="50"/>
+        <image name="Product-50" width="50" height="50"/>
+        <image name="Sellsy-100" width="100" height="100"/>
+        <image name="Statistics-50" width="50" height="50"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WvB-w5-527"/>
-        <segue reference="j5a-fa-8fE"/>
-        <segue reference="PAW-43-pp7"/>
+        <segue reference="kw8-Xa-od8"/>
+        <segue reference="uRZ-sd-VJ3"/>
+        <segue reference="Vn5-qA-1wI"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -68,6 +68,9 @@ class OrderTableViewController: UITableViewController {
     
 
    
+    @IBAction func addo(_ sender: Any) {
+        performSegue(withIdentifier: "addorder", sender: self)
+    }
     
     @IBOutlet weak var myseg: UISegmentedControl!
     
@@ -123,69 +126,7 @@ class OrderTableViewController: UITableViewController {
         
         performSegue(withIdentifier: "addorder", sender: self)
         
-        /*var customer: UITextField?
-        //var customerid: UITextField?
-        var payment: UITextField?
-        //var subtotla: UITextField?
-        //var email: UITextField?
-        
-        
-        let dialogMessage = UIAlertController(title: "New Order", message: "Please enter following fields", preferredStyle: .alert)
-        
-        let ok = UIAlertAction(title: "Add", style: .default, handler: { (action) -> Void in
-            print("Ok button tapped")
-            
-            let fullnameinput = customer?.text
-                
-            let payment = payment?.text
-            //let subtotla = subtotla?.text
-            
-            //let tempobject = orderObject(customer:fullnameinput,payment:payment,subtotla:0,time:"\(FIRServerValue.timestamp())",complete:false,customerid:"-KagZYlVPjAmeOxmjKup")
-            
-            let random = FIRDatabase.database().reference().childByAutoId().key
-            //print(self.add)
-            FIRDatabase.database().reference().child("orders").child(random).child("customer").setValue(fullnameinput)
-            
-            FIRDatabase.database().reference().child("orders").child(random).child("payment").setValue(payment)
-            
-            FIRDatabase.database().reference().child("orders").child(random).child("subtotla").setValue(0.00)
-            
-        FIRDatabase.database().reference().child("orders").child(random).child("time").setValue("January,05,2016")
-            
-            FIRDatabase.database().reference().child("orders").child(random).child("complete").setValue(false)
-            
-          FIRDatabase.database().reference().child("orders").child(random).child("customerid").setValue("-KagZYlVPjAmeOxmjKup")
-            
-            FIRDatabase.database().reference().child("orders").child(random).child("belong").setValue(FIRAuth.auth()?.currentUser?.uid)
-
-            //self.tableView.reloadData()
-        })
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
-            print("Cancel button tapped")
         }
-        
-        dialogMessage.addAction(ok)
-        dialogMessage.addAction(cancel)
-        
-        dialogMessage.addTextField { (textField) -> Void in
-            
-            customer = textField
-            customer?.placeholder = "Type in customer name"
-            
-        }
-        dialogMessage.addTextField { (textField) -> Void in
-            
-            payment = textField
-            payment?.placeholder = "Type in payment method"
-            
-        }
-        
-        
-        
-        self.present(dialogMessage, animated: true, completion: nil)*/
-        
-    }
     
     func sortArray(){
         
@@ -210,26 +151,6 @@ class OrderTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         
-        
-        /*self.tableView.es_addPullToRefresh {
-            
-            [weak self] in
-            
-            for each in dic {
-                
-            FIRDatabase.database().reference().child("orders").child(each.key).child("complete").setValue(!each.value)
-                
-            self?.tableView.reloadData()
-                
-            }
-            
-            
-            /// ...
-            /// Stop refresh when your job finished, it will reset refresh footer if completion is true
-            //self?.tableView.es_stopPullToRefresh(ignoreDate: true)
-            /// Set ignore footer or not
-            self?.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
-        }*/
         
         
         let myref = FIRDatabase.database().reference().child("orders")
@@ -392,8 +313,9 @@ class OrderTableViewController: UITableViewController {
         cell.SBLable.text = "\((orders[Array(orders.keys)[indexPath.row]]?.subtotla)!)"
         cell.TimeLable.text = orders[Array(orders.keys)[indexPath.row]]?.time
         cell.cellkey = Array(orders.keys)[indexPath.row]
-        cell.completeswitch.setOn(true, animated: true)
+        //cell.completeswitch.setOn(true, animated: true)
         cell.isfinishe = false
+        cell.completebutton.setBackgroundImage(UIImage(named:"empty-check-box.png"), for: .normal)
         
         } else {
         cell.CNLable.text = finishedorders[Array(finishedorders.keys)[indexPath.row]]?.customer
@@ -401,9 +323,9 @@ class OrderTableViewController: UITableViewController {
         cell.SBLable.text = "\((finishedorders[Array(finishedorders.keys)[indexPath.row]]?.subtotla)!)"
         cell.TimeLable.text = finishedorders[Array(finishedorders.keys)[indexPath.row]]?.time
         cell.cellkey = Array(finishedorders.keys)[indexPath.row]
-        cell.completeswitch.setOn(false, animated: true)
+        //cell.completeswitch.setOn(false, animated: true)
         cell.isfinishe = true
-            
+        cell.completebutton.setBackgroundImage(UIImage(named:"checkbox-checked.png"), for: .normal)
         }
         
         return cell

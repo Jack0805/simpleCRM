@@ -29,6 +29,7 @@ struct ProductObject{
 class ProductTableViewController: UITableViewController {
     
 
+    @IBOutlet weak var searchbar: UISearchBar!
     
     var productOB = [ProductObject]()
     
@@ -37,6 +38,8 @@ class ProductTableViewController: UITableViewController {
     let addref = FIRDatabase.database().reference().child("orders")
     
     var users = FIRAuth.auth()?.currentUser
+    
+    var filter:[String]!
     
     var isfromaddproduct = false
     //var isfromorderview = false
@@ -113,6 +116,12 @@ class ProductTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        
+        //self.filter = productOB
+        
+  
         
         print(isfromaddproduct)
         self.tableView.register(ProductTableViewCell.self, forCellReuseIdentifier: "product")

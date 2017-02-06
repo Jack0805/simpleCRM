@@ -53,13 +53,13 @@
                         <color key="textColor" red="0.085557256060000003" green="0.55010707489999999" blue="0.0099821100489999991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="skx-bu-PzV">
-                        <rect key="frame" x="288" y="22" width="51" height="31"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFl-g6-ckt">
+                        <rect key="frame" x="313" y="14" width="46" height="46"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <connections>
-                            <action selector="switch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="eAB-Pz-9TU"/>
+                            <action selector="completeBT:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hOG-zd-UK6"/>
                         </connections>
-                    </switch>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <accessibility key="accessibilityConfiguration" identifier="ordercell">
@@ -70,7 +70,7 @@
                 <outlet property="PMLable" destination="jJ1-L9-FyT" id="zhX-ey-WaH"/>
                 <outlet property="SBLable" destination="AZ5-RK-s3E" id="k7d-oa-M8Y"/>
                 <outlet property="TimeLable" destination="f6V-UX-FgL" id="QOl-t9-IwT"/>
-                <outlet property="completeswitch" destination="skx-bu-PzV" id="5FV-Q6-udX"/>
+                <outlet property="completebutton" destination="tFl-g6-ckt" id="EjU-rx-Pyq"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="67.5"/>
         </tableViewCell>
