@@ -82,6 +82,8 @@ class OrderTableViewController: UITableViewController {
     var finished = true
     var displayfinishedorder = false
     var celldic : Dictionary<String,Bool> = Dictionary()
+    var isfromcontact = false
+    var contactkey = ""
     //var model = ModelData()
     //var test:Dictionary<String,[String]> = Dictionary()
     
@@ -272,6 +274,28 @@ class OrderTableViewController: UITableViewController {
                             
                             if (OrderDetailDict.value(forKey: "belong") as? String == users?.uid){
                                 
+                                if (self.isfromcontact == true){
+                                    
+                                    if (OrderDetailDict.value(forKey: "customerid") as? String == self.contactkey){
+                                        
+                                        if(OrderDetailDict.value(forKey: "complete") as! Bool == true) {
+                                            
+                                            self.finishedorders[eachkey] = orderObject(customer:OrderDetailDict.value(forKey: "customer") as! String!,payment:OrderDetailDict.value(forKey: "payment") as! String!,subtotla:OrderDetailDict.value(forKey: "subtotla") as! Double,time:OrderDetailDict.value(forKey: "time") as! String!,complete:true,customerid:OrderDetailDict.value(forKey: "customerid") as! String!)
+                                            self.tableView.reloadData()
+                                        }
+                                            
+                                        else{
+                                            
+                                            self.orders[eachkey] = orderObject(customer:OrderDetailDict.value(forKey: "customer") as! String!,payment:OrderDetailDict.value(forKey: "payment") as! String!,subtotla:OrderDetailDict.value(forKey: "subtotla") as! Double,time:OrderDetailDict.value(forKey: "time") as! String!,complete:false,customerid:OrderDetailDict.value(forKey: "customerid") as! String!)
+                                            print(self.orders)
+                                            self.tableView.reloadData()
+                                        }
+
+                                        
+                                    }
+                                    
+                                } else{
+                                
                                 if(OrderDetailDict.value(forKey: "complete") as! Bool == true) {
                                     
                                 self.finishedorders[eachkey] = orderObject(customer:OrderDetailDict.value(forKey: "customer") as! String!,payment:OrderDetailDict.value(forKey: "payment") as! String!,subtotla:OrderDetailDict.value(forKey: "subtotla") as! Double,time:OrderDetailDict.value(forKey: "time") as! String!,complete:true,customerid:OrderDetailDict.value(forKey: "customerid") as! String!)
@@ -283,6 +307,7 @@ class OrderTableViewController: UITableViewController {
                                 self.orders[eachkey] = orderObject(customer:OrderDetailDict.value(forKey: "customer") as! String!,payment:OrderDetailDict.value(forKey: "payment") as! String!,subtotla:OrderDetailDict.value(forKey: "subtotla") as! Double,time:OrderDetailDict.value(forKey: "time") as! String!,complete:false,customerid:OrderDetailDict.value(forKey: "customerid") as! String!)
                                     print(self.orders)
                                     self.tableView.reloadData()
+                                }
                                 }
                                 
                             }
