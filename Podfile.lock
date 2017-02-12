@@ -1,4 +1,5 @@
 PODS:
+  - CSPieChart (0.3.1)
   - EPContactsPicker (2.0.1)
   - ESPullToRefresh (2.5)
   - Firebase/Auth (3.11.0):
@@ -43,6 +44,7 @@ PODS:
   - ScrollableGraphView (3.1.0)
 
 DEPENDENCIES:
+  - CSPieChart
   - EPContactsPicker
   - ESPullToRefresh
   - Firebase/Auth
@@ -51,6 +53,7 @@ DEPENDENCIES:
   - ScrollableGraphView
 
 SPEC CHECKSUMS:
+  CSPieChart: a25a5a5a844c2220c8137a62f5b4a97bc04bb856
   EPContactsPicker: 6f91fc9d5e585480cc169ab27d97b392c79f95d2
   ESPullToRefresh: ce43254f1d3767be9396bc6b433ee9516010c453
   Firebase: b8134e285eb33201115bc688bc5d7f112923bc1f
@@ -65,6 +68,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
   ScrollableGraphView: e2c8bedc7bbb643e8ac57b9456070d68355c4e4c
 
-PODFILE CHECKSUM: bf36a144e49dcf0934e7bfd7e4dbd9a004b6f51b
+PODFILE CHECKSUM: 16982f172dcaba94b3149fd4af62d469f5d6421d
 
 COCOAPODS: 1.1.1

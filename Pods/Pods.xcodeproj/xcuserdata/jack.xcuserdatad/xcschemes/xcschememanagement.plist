@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CSPieChart.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>EPContactsPicker-EPContactsPicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,7 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>380C9273D640136FC3B15FC996591A14</key>
+		<key>4EC5874DBB1F02540EF0E11FA2C31B0E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>72176B87F49251941969F9B7DB6C3C27</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,12 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>990D00E9C6B2891FFEC60E7904B9EAE5</key>
+		<key>9B49654B82B0313D988195D5587273EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B49654B82B0313D988195D5587273EF</key>
+		<key>A62733B1FC8CB5C07048307135C0127B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

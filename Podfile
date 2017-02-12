@@ -11,5 +11,6 @@ target 'simpleCRM' do
   pod 'EPContactsPicker'
   pod "ESPullToRefresh"
   pod 'ScrollableGraphView'
+  pod "CSPieChart"
 
 end

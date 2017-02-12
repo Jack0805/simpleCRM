@@ -18,6 +18,7 @@
 		04BB5EDB1E2798E200F42BB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BB5ED91E2798E200F42BB4 /* LaunchScreen.storyboard */; };
 		04BB5EE61E2798E200F42BB4 /* simpleCRMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5EE51E2798E200F42BB4 /* simpleCRMTests.swift */; };
 		04BB5EF11E2798E200F42BB4 /* simpleCRMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB5EF01E2798E200F42BB4 /* simpleCRMUITests.swift */; };
+		04C6D1E11E49A4690030B496 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6D1E01E49A4690030B496 /* PieChartViewController.swift */; };
 		04D188CC1E2F4A51009D98D9 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D188CB1E2F4A51009D98D9 /* OrderTableViewController.swift */; };
 		04D188D31E2FACCF009D98D9 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D188D11E2FACCF009D98D9 /* OrderTableViewCell.swift */; };
 		04D188D41E2FACCF009D98D9 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D188D21E2FACCF009D98D9 /* OrderTableViewCell.xib */; };
@@ -68,6 +69,7 @@
 		04BB5EEC1E2798E200F42BB4 /* simpleCRMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simpleCRMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BB5EF01E2798E200F42BB4 /* simpleCRMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simpleCRMUITests.swift; sourceTree = "<group>"; };
 		04BB5EF21E2798E200F42BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C6D1E01E49A4690030B496 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
 		04D188CB1E2F4A51009D98D9 /* OrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 		04D188D11E2FACCF009D98D9 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		04D188D21E2FACCF009D98D9 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				04D46DBE1E40BFD1003E0E1F /* ProductTableViewCell.swift */,
 				04D46DBF1E40BFD1003E0E1F /* ProductTableViewCell.xib */,
 				04D46DC31E4203EC003E0E1F /* SalesTrackViewController.swift */,
+				04C6D1E01E49A4690030B496 /* PieChartViewController.swift */,
 			);
 			path = simpleCRM;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				04D46DC01E40BFD1003E0E1F /* ProductTableViewCell.swift in Sources */,
 				04D188CC1E2F4A51009D98D9 /* OrderTableViewController.swift in Sources */,
 				04D188D81E30E289009D98D9 /* OrderDetailTableViewController.swift in Sources */,
+				04C6D1E11E49A4690030B496 /* PieChartViewController.swift in Sources */,
 				04536B401E27A11C00703AE3 /* ContactTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

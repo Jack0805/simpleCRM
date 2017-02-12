@@ -13,6 +13,7 @@ import Firebase
 class SalesTrackViewController: UIViewController {
     
     
+    
     var graphView = ScrollableGraphView()
     var currentGraphType = GraphType.dark
     var graphConstraints = [NSLayoutConstraint]()
@@ -22,15 +23,18 @@ class SalesTrackViewController: UIViewController {
     var month = ""
     // Data
     let numberOfDataItems = 29
+    
     let myref = FIRDatabase.database().reference().child("orders")
     var users = FIRAuth.auth()?.currentUser
     
     lazy var data: [Double] = self.generateRandomData(self.numberOfDataItems, max: 10000)
     lazy var labels: [String] = self.generateSequentialLabels(self.numberOfDataItems, text: self.month)
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.tabBarController?.tabBar.isHidden = true
         
         let date = Date()
         
@@ -64,13 +68,15 @@ class SalesTrackViewController: UIViewController {
         default:
             self.month = "Dec"
         }
+        
+        self.title = "Sales track in \(self.month)"
         graphView = ScrollableGraphView(frame: self.view.frame)
         graphView = createDarkGraph(self.view.frame)
         
         graphView.set(data: data, withLabels: labels)
-        graphView.topMargin.add(50.54)
-        graphView.bottomMargin.add(140.54)
-        
+        graphView.topMargin.add(100.54)
+        graphView.bottomMargin.add(60.54)
+    
         self.view.addSubview(graphView)
         //self.myview.addSubview(graphView)
         
@@ -79,6 +85,7 @@ class SalesTrackViewController: UIViewController {
         addLabel(withText: "DARK (TAP HERE)")
     }
     
+
     func didTap(_ gesture: UITapGestureRecognizer) {
         
         currentGraphType.next()
@@ -269,7 +276,8 @@ class SalesTrackViewController: UIViewController {
         let tapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(didTap))
         label.addGestureRecognizer(tapGestureRecogniser)
         
-        self.view.insertSubview(label, aboveSubview: graphView)
+        //self.view.insertSubview(label, aboveSubview: graphView)
+        self.view.insertSubview(label, belowSubview: graphView)
         self.view.addConstraints([rightConstraint, topConstraint, heightConstraint, widthConstraint])
     }
     
@@ -295,6 +303,7 @@ class SalesTrackViewController: UIViewController {
     
     // Data Generation
     private func generateRandomData(_ numberOfItems: Int, max: Double) -> [Double] {
+        
         let calendar = Calendar.current
         let date = Date()
         
@@ -363,7 +372,57 @@ class SalesTrackViewController: UIViewController {
                                     myday = 8
                                 } else if (day == "09"){
                                     myday = 9
-                                } else {
+                                } else if (day == "09"){
+                                    myday = 9
+                                } else if (day == "10"){
+                                    myday = 10
+                                } else if (day == "11"){
+                                    myday = 11
+                                } else if (day == "12"){
+                                    myday = 12
+                                } else if (day == "13"){
+                                    myday = 13
+                                } else if (day == "14"){
+                                    myday = 14
+                                } else if (day == "15"){
+                                    myday = 15
+                                } else if (day == "16"){
+                                    myday = 16
+                                } else if (day == "17"){
+                                    myday = 17
+                                } else if (day == "18"){
+                                    myday = 18
+                                } else if (day == "19"){
+                                    myday = 19
+                                } else if (day == "20"){
+                                    myday = 20
+                                } else if (day == "21"){
+                                    myday = 21
+                                } else if (day == "22"){
+                                    myday = 22
+                                } else if (day == "23"){
+                                    myday = 23
+                                } else if (day == "24"){
+                                    myday = 24
+                                } else if (day == "25"){
+                                    myday = 25
+                                } else if (day == "26"){
+                                    myday = 26
+                                } else if (day == "27"){
+                                    myday = 27
+                                } else if (day == "28"){
+                                    myday = 28
+                                } else if (day == "29"){
+                                    myday = 29
+                                } else if (day == "30"){
+                                    myday = 30
+                                } else if (day == "31"){
+                                    myday = 31
+                                } else if (day == "09"){
+                                    myday = 9
+                                }
+                                
+                                else {
                                     myday = Int(myday)
                                 }
                                 
